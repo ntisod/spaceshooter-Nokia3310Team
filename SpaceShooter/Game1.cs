@@ -14,6 +14,11 @@ namespace SpaceShooter
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Vector2 ship_vector;
+        Vector2 ship_speed;
+
+        //variabler
+        Texture2D ship_texture;
 
         public Game1()
         {
@@ -30,8 +35,14 @@ namespace SpaceShooter
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            ship_vector.X = 380;
+            ship_vector.Y = 400;
+
+            ship_speed.X = 2.5f;
+            ship_speed.Y = 4.5f;
 
             base.Initialize();
+
         }
 
         /// <summary>
@@ -40,10 +51,12 @@ namespace SpaceShooter
         /// </summary>
         protected override void LoadContent()
         {
+            
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            ship_texture = Content.Load<Texture2D>("Sprites/ship");
         }
 
         /// <summary>
@@ -66,6 +79,18 @@ namespace SpaceShooter
                 Exit();
 
             // TODO: Add your update logic here
+            ship_vector.X += ship_speed.X;
+            if (ship_vector.X > Window.ClientBounds.Width - ship_texture.Width || ship_vector.X < 0)
+            {
+                ship_speed.X *= -1;
+            }
+
+            ship_vector.Y += ship_speed.Y;
+            if (ship_vector.Y > Window.ClientBounds.Height - ship_texture.Height || ship_vector.Y < 0)
+            {
+                ship_speed.Y *= -1;
+            }
+
 
             base.Update(gameTime);
         }
@@ -79,6 +104,9 @@ namespace SpaceShooter
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            spriteBatch.Draw(ship_texture, ship_vector, Color.White);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
