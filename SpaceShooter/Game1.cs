@@ -15,6 +15,8 @@ namespace SpaceShooter
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player;
+        Enemy enemy;
+        PrintText printText;
         Texture2D texture;
         Vector2 vector;
         Vector2 speed;
@@ -46,6 +48,8 @@ namespace SpaceShooter
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Player(Content.Load<Texture2D>("Sprites/ship"), 380, 400, 2.5f, 4.5f);
+            printText = new PrintText(Content.Load<SpriteFont>("Fonts/myFont"));
+            enemy = new Enemy(Content.Load<Texture2D>(""), 0, 0);
         }
 
       
@@ -65,6 +69,7 @@ namespace SpaceShooter
                 Exit();
 
             player.Update(Window);
+            enemy.Update(Window);
 
 
 
@@ -74,6 +79,7 @@ namespace SpaceShooter
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, vector, Color.White);
+            enemy.Draw(spriteBatch);
         }
 
         /// <summary>
@@ -86,6 +92,7 @@ namespace SpaceShooter
             //grafik
             spriteBatch.Begin();
             player.Draw(spriteBatch);
+            printText.Print("Test", spriteBatch, 0, 0);
             spriteBatch.End();
 
             base.Draw(gameTime);
