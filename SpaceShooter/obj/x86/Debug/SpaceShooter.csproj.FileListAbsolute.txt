@@ -23,3 +23,4 @@ C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\SpaceShooter\obj\x86\D
 C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\SpaceShooter\obj\x86\Debug\SpaceShooter.pdb
 C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\ship.xnb
 C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\SpaceShooter\bin\Windows\x86\Debug\Content\Fonts\myFont.xnb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\mine.xnb

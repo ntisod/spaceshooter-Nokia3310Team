@@ -1,6 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace SpaceShooter
 {
@@ -15,7 +21,7 @@ namespace SpaceShooter
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player;
-        Enemy enemy;
+        List <Enemy> enemies;
         PrintText printText;
         Texture2D texture;
         Vector2 vector;
@@ -47,12 +53,26 @@ namespace SpaceShooter
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            player = new Player(Content.Load<Texture2D>("Sprites/ship"), 380, 400, 2.5f, 4.5f);
-            printText = new PrintText(Content.Load<SpriteFont>("Fonts/myFont"));
-            enemy = new Enemy(Content.Load<Texture2D>(""), 0, 0);
+
+            
+            player = new Player(Content.Load<Texture2D>("images/player/ship"), 380, 400, 2.5f,
+                    4.5f);
+
+
+           
+            enemies = new List<Enemy>();
+            Random random = new Random();
+            Texture2D tmpSprite = Content.Load<Texture2D>("images/enemies/mine");
+            for (int i = 0; i < 5; i++)
+            {
+                int rndX = random.Next(0, Window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, Window.ClientBounds.Height / 2);
+                Mine temp = new Mine(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // Lägg till i listan
+            }           
         }
 
-      
+
         protected override void UnloadContent()
         {
             
@@ -69,7 +89,14 @@ namespace SpaceShooter
                 Exit();
 
             player.Update(Window);
-            enemy.Update(Window);
+            foreach (Enemy e in enemies)
+            {
+                if (e.IsAlive)
+                    e.Update(Window);
+                else
+                    enemies.Remove(e);
+            }
+                
 
 
 
@@ -79,7 +106,7 @@ namespace SpaceShooter
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, vector, Color.White);
-            enemy.Draw(spriteBatch);
+            
         }
 
         /// <summary>
@@ -92,6 +119,8 @@ namespace SpaceShooter
             //grafik
             spriteBatch.Begin();
             player.Draw(spriteBatch);
+            foreach (Enemy e in enemies)
+                e.Draw(spriteBatch);
             printText.Print("Test", spriteBatch, 0, 0);
             spriteBatch.End();
 
