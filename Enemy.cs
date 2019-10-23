@@ -70,14 +70,23 @@ namespace SpaceShooter
     class TimBoss : Enemy
     {
         public TimBoss(Texture2D texture, float X, float Y)
-            : base(texture, X, Y, 0f, 3f)
+            : base(texture, X, Y, 3f, 0f)
         {
         }
         public override void Update(GameWindow window)
         {
-            
+
+            // Flytta på fienden:
+            vector.X += speed.X;
+            // Kontrollera så fienden inte åker utanför fönstret på sidorna
+            if (vector.X > window.ClientBounds.Width - texture.Width || vector.X < 0)
+                speed.X *= -1; // Byt riktning på fienden
+
+            if (vector.Y > window.ClientBounds.Height - texture.Height || vector.Y < 0)
+                speed.Y *= -1; // Byt riktning på fienden
+
             vector.Y += speed.Y;
-            
+            // Gör fienden inaktiv om den åker ut där nere
             if (vector.Y > window.ClientBounds.Height)
                 isAlive = false;
         }

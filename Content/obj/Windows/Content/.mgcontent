@@ -4,12 +4,12 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/images/enemies/mine.png</File>
-    <File>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/images/enemies/TimBoss.png</File>
-    <File>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/images/enemies/tripod.png</File>
-    <File>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/images/player/bullet.png</File>
-    <File>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/images/player/ship.png</File>
-    <File>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/images/powerups/coin.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/mine.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/TimBoss.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/tripod.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/player/bullet.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/player/ship.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/powerups/coin.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

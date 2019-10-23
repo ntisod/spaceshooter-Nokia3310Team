@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/images/enemies/TimBoss.png</SourceFile>
+  <SourceFile>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/TimBoss.png</SourceFile>
   <SourceTime>2019-10-17T13:28:44.5007512+02:00</SourceTime>
-  <DestFile>C:/Users/elev/Documents/Visual Studio 2017/Projects/SpaceShooter/Content/bin/Windows/Content/images/enemies/TimBoss.xnb</DestFile>
-  <DestTime>2019-10-17T13:30:18.1811024+02:00</DestTime>
+  <DestFile>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/bin/Windows/Content/images/enemies/TimBoss.xnb</DestFile>
+  <DestTime>2019-10-18T13:21:32.8093977+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
