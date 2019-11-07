@@ -35,15 +35,15 @@ namespace SpaceShooter
 
         public static void LoadContent(ContentManager content, GameWindow window)
         {
-            menuSprite = content.Load<Texture2D>("menubildenhär");
+            menuSprite = content.Load<Texture2D>("images/menu.png");
             menuPos.X = window.ClientBounds.Width / 2 - menuSprite.Width / 2;
             menuPos.Y = window.ClientBounds.Height / 2 - menuSprite.Height / 2;
-            player = new Player(content.Load<Texture2D>("shipbildenhär"), 380, 400, 2.5f, 4.5f, content.Load<Texture2D>("bulletbildenhär"));
+            player = new Player(content.Load<Texture2D>("images/player/ship"), 380, 400, 2.5f, 4.5f, content.Load<Texture2D>("bulletbildenhär"));
 
             //Fiender
             enemies = new List<Enemy>();
             Random random = new Random();
-            Texture2D tmpSprite = content.Load<Texture2D>("minebildenhär");
+            Texture2D tmpSprite = content.Load<Texture2D>("images/enemies/mine");
             for (int i = 0; i > 5; i++)
             {
                 int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
@@ -52,7 +52,7 @@ namespace SpaceShooter
                 enemies.Add(temp); // lägg till listan
             }
 
-            tmpSprite = content.Load<Texture2D>("tripodbildenhär");
+            tmpSprite = content.Load<Texture2D>("images/enemies/tripod");
             for (int i = 0; i > 5; i++)
             {
                 int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
@@ -61,8 +61,17 @@ namespace SpaceShooter
                 enemies.Add(temp); // Lägg till listan
             }
 
-            goldCoinSprite = content.Load<Texture2D>("coinbildenhär");
-            printText = new PrintText(content.Load<SpriteFont>("myFont"));
+            tmpSprite = content.Load<Texture2D>("images/enemies/TimBoss");
+            for (int i = 0; i < 1; i++)
+            {
+                int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, window.ClientBounds.Height / 2);
+                TimBoss temp = new TimBoss(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // Lägg till i listan
+            }
+
+            goldCoinSprite = content.Load<Texture2D>("images/powerups/coin");
+            printText = new PrintText(content.Load<SpriteFont>("images/myFont.spritefont"));
         }
 
         // MenuUpdate() - menu val
