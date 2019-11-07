@@ -53,7 +53,7 @@ namespace SpaceShooter
             }
 
             tmpSprite = content.Load<Texture2D>("tripodbildenhär");
-            for (int i = 0; i> 5; i++)
+            for (int i = 0; i > 5; i++)
             {
                 int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
                 int rndY = random.Next(0, window.ClientBounds.Height / 2);
@@ -102,7 +102,7 @@ namespace SpaceShooter
                     e.IsAlive = false; //Döda fiender
                     player.Points++; // Ge spelaren poäng
                 }
-            
+
 
                 if (e.IsAlive) // kollar om fiende lever
                 {
