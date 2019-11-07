@@ -56,3 +56,10 @@ C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\obj\x86\Debug\SpaceSho
 C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\obj\x86\Debug\SpaceShooter.csproj.CopyComplete
 C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\obj\x86\Debug\SpaceShooter.exe
 C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\obj\x86\Debug\SpaceShooter.pdb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\bin\Windows\x86\Debug\Content\images\menu\exit.xnb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\bin\Windows\x86\Debug\Content\images\menu\highscore.xnb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\bin\Windows\x86\Debug\Content\images\menu\start.xnb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\bin\Windows\x86\Debug\Content\images\background.xnb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\bin\Windows\x86\Debug\Content\images\menu.xnb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\bin\Windows\x86\Debug\Content\images\myFont.xnb
+C:\Users\elev\Documents\GitHub\spaceshooter-Nokia3310Team\bin\Windows\x86\Debug\Content\images\stone.xnb

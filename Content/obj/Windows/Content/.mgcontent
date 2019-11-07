@@ -4,14 +4,28 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/background.png</File>
     <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/mine.png</File>
     <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/TimBoss.png</File>
     <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/tripod.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/menu.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/menu/exit.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/menu/highscore.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/menu/start.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/myFont.spritefont</File>
     <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/player/bullet.png</File>
     <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/player/ship.png</File>
     <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/powerups/coin.png</File>
+    <File>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/stone.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

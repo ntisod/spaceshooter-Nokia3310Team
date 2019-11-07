@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/enemies/tripod.png</SourceFile>
-  <SourceTime>2019-10-11T11:54:07.5959899+02:00</SourceTime>
-  <DestFile>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/bin/Windows/images/enemies/tripod.xnb</DestFile>
-  <DestTime>2019-11-07T13:25:45.6335457+01:00</DestTime>
+  <SourceFile>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/images/stone.png</SourceFile>
+  <SourceTime>2019-11-07T12:59:04.9346858+01:00</SourceTime>
+  <DestFile>C:/Users/elev/Documents/GitHub/spaceshooter-Nokia3310Team/Content/bin/Windows/Content/images/stone.xnb</DestFile>
+  <DestTime>2019-11-07T13:24:49.1413113+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
