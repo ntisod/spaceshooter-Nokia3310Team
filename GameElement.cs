@@ -31,6 +31,40 @@ namespace SpaceShooter
             goldCoins = new List<GoldCoin>();
         }
 
+        /*
+        //skapar fiender, funkar inte
+        public static void GenerateEnemies(ContentManager content, GameWindow window)
+        {
+            Random random = new Random();
+            Texture2D tmpSprite = content.Load<Texture2D>("images/enemies/mine");
+            for (int i = 0; i < 5; i++)
+            {
+                int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, window.ClientBounds.Height / 2);
+                Mine temp = new Mine(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // lägg till listan
+            }
+
+            tmpSprite = content.Load<Texture2D>("images/enemies/tripod");
+            for (int i = 0; i < 5; i++)
+            {
+                int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, window.ClientBounds.Height / 2);
+                Tripod temp = new Tripod(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // Lägg till listan
+            }
+
+            tmpSprite = content.Load<Texture2D>("images/enemies/TimBoss");
+            for (int i = 0; i < 1; i++)
+            {
+                int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, window.ClientBounds.Height / 2);
+                TimBoss temp = new TimBoss(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // Lägg till i listan
+            }
+        }
+        */
+
         // LoadContent()
 
         public static void LoadContent(ContentManager content, GameWindow window)
@@ -134,6 +168,13 @@ namespace SpaceShooter
 
         public static State RunUpdate(ContentManager content, GameWindow window, GameTime gameTime)
         {
+
+            if (!player.IsAlive)
+            {
+                Reset(window, content);
+                return State.Menu;
+            }
+
             // updatera spelarens position:
             player.Update(window, gameTime);
             // Går genom alla fiender

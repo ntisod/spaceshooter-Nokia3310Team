@@ -30,12 +30,30 @@ namespace SpaceShooter
         }
 
         // =======================================================================
+        // Reset(), startar om spelen
+        // =======================================================================
+        public void Reset(float X, float Y, float speedX, float speedY)
+        {
+            vector.X = X;
+            vector.Y = Y;
+            speed.X = speedX;
+            speed.Y = speedY;
+            bullets.Clear();
+            timeSinceLastBullet = 0;
+            points = 0;
+            isAlive = true;
+        }
+
+
+        // =======================================================================
         // Update(), flyttar på spelaren
         // =======================================================================
         public void Update(GameWindow window, GameTime gameTime)
         {
             // Läs in tangenttryckningar:
             KeyboardState keyboardState = Keyboard.GetState();
+            if (keyboardState.IsKeyDown(Keys.Escape))
+                IsAlive = false;
 
             // Flytta rymdskeppet efter tangenttryckningar (om det inte är på
             // väg ut från kanten):
