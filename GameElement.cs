@@ -35,16 +35,16 @@ namespace SpaceShooter
 
         public static void LoadContent(ContentManager content, GameWindow window)
         {
-            menuSprite = content.Load<Texture2D>("images/menu.png");
+            menuSprite = content.Load<Texture2D>("images/menu");
             menuPos.X = window.ClientBounds.Width / 2 - menuSprite.Width / 2;
             menuPos.Y = window.ClientBounds.Height / 2 - menuSprite.Height / 2;
-            player = new Player(content.Load<Texture2D>("images/player/ship"), 380, 400, 2.5f, 4.5f, content.Load<Texture2D>("bulletbildenhär"));
+            player = new Player(content.Load<Texture2D>("images/player/ship"), 380, 400, 4.5f, 4.5f, content.Load<Texture2D>("images/player/bullet"));
 
             //Fiender
             enemies = new List<Enemy>();
             Random random = new Random();
             Texture2D tmpSprite = content.Load<Texture2D>("images/enemies/mine");
-            for (int i = 0; i > 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
                 int rndY = random.Next(0, window.ClientBounds.Height / 2);
@@ -53,7 +53,7 @@ namespace SpaceShooter
             }
 
             tmpSprite = content.Load<Texture2D>("images/enemies/tripod");
-            for (int i = 0; i > 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
                 int rndY = random.Next(0, window.ClientBounds.Height / 2);
@@ -71,7 +71,41 @@ namespace SpaceShooter
             }
 
             goldCoinSprite = content.Load<Texture2D>("images/powerups/coin");
-            printText = new PrintText(content.Load<SpriteFont>("images/myFont.spritefont"));
+            printText = new PrintText(content.Load<SpriteFont>("images/myFont"));
+        }
+
+        private static void Reset(GameWindow window, ContentManager content)
+        {
+            player.Reset(380, 400, 4.5f, 4.5f);
+
+            enemies.Clear();
+            Random random = new Random();
+            Texture2D tmpSprite = content.Load<Texture2D>("images/enemies/mine");
+            for (int i = 0; i < 5; i++)
+            {
+                int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, window.ClientBounds.Height / 2);
+                Mine temp = new Mine(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // lägg till listan
+            }
+
+            tmpSprite = content.Load<Texture2D>("images/enemies/tripod");
+            for (int i = 0; i < 5; i++)
+            {
+                int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, window.ClientBounds.Height / 2);
+                Tripod temp = new Tripod(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // Lägg till listan
+            }
+
+            tmpSprite = content.Load<Texture2D>("images/enemies/TimBoss");
+            for (int i = 0; i < 1; i++)
+            {
+                int rndX = random.Next(0, window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, window.ClientBounds.Height / 2);
+                TimBoss temp = new TimBoss(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // Lägg till i listan
+            }
         }
 
         // MenuUpdate() - menu val
@@ -106,9 +140,11 @@ namespace SpaceShooter
             foreach (Enemy e in enemies.ToList())
             {
                 // Kontrollera om finden kolliderar med ett skott
+
                 foreach (Bullet b in player.Bullets)
                 {
-                    e.IsAlive = false; //Döda fiender
+                   if(e.CheckCollision(b))
+                    e.IsAlive = false;  //Döda fiender
                     player.Points++; // Ge spelaren poäng
                 }
 
